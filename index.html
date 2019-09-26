@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Robot-Simulator</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+<h2>JavaScript Robot Simulator</h2>
+<p>The application can read commands in following format (not case sensitive),Press Enter after giving command to the ROBOT :)
+    <ul>
+        <li>PLACE X-COORDINATE, Y-COORDINATE, DIRECTION  (Example: place 2, 3, west)</li>
+        <li>MOVE (To move the robot forward in the direction it is facing)</li>
+        <li>LEFT (Rotate left)</li>
+        <li>RIGHT (Rotate right)</li>
+        <li>REPORT (To see the current position of robot on the grid)</li>
+    </ul>
+</p>
+<main>
+    <div class="input-area">
+        <label for="command">Enter Command:</label>
+        <input type="text" id="command" onfocusout="inputView.processCommand(this.value)" onkeydown="if (event.keyCode == 13) inputView.processCommand(this.value);" autofocus>
+    </div>
+    <div class="content">
+         <h4>Current Status:</h4>
+
+        <p id="report"></p>
+        <button id="restart">Restart</button>
+    </div>
+    <canvas id="c" width="551" height="580"></canvas>
+</main>
+
+<script src="logic.js"></script>
+
+</body>
+</html>
